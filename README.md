@@ -1,4 +1,4 @@
-# Hi there! <img src = "https://github.com/hristomanos/hristomanos/blob/main/wave.gif" width = 30 />
+# Hi there!
 <p align="Justify">
 My name is Christos, and I am a games programmer based in London 🇬🇧. I have two years of professional experience as a software developer at Miniclip, where I collaborated on the development and release of a mobile game titled "The Bowling Fury." As part of a talented cross-functional team, I gained hands-on experience working on various features of the game, including both front-end and back-end development.
 
