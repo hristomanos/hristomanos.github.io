@@ -46,7 +46,7 @@ export const experience = [
     role: "B.Sc. Computer Games Programming",
     period: "2016 — 2020",
     location: "Staffordshire, United Kingdom",
-    description: "Focus on Game Development and Game Design",
+    description: "Focus on low-level programming and game engine development",
     highlights: [
       "Built game engine components including implementing rendering techniques, physics algorithms and UI tools with IMGUI",
       "Explored AI pathfinding algorithms",

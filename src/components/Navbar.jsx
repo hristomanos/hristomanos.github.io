@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { site } from "../data/site";
 
@@ -7,7 +7,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
-  { href: "#blog", label: "Blog" },
+  //{ href: "#blog", label: "Blog" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
@@ -15,6 +15,15 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const handleHomeClick = (e) => {
+    closeMenu();
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -43,7 +52,7 @@ export default function Navbar() {
         <Link
           to="/"
           className="font-heading font-semibold text-lg hover:text-accent transition-colors"
-          onClick={closeMenu}
+          onClick={handleHomeClick}
         >
           {site.name.split(" ")[0]}
           <span className="text-accent">.</span>
@@ -60,14 +69,14 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li>
+          {/* <li>
             <Link
               to="/blog"
               className="text-sm text-muted hover:text-text transition-colors"
             >
               All posts
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         <button
@@ -95,7 +104,7 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-            <li>
+            {/* <li>
               <Link
                 to="/blog"
                 className="text-lg text-muted hover:text-accent transition-colors"
@@ -103,7 +112,7 @@ export default function Navbar() {
               >
                 All posts
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       )}

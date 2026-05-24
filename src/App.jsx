@@ -7,7 +7,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import BlogPreview from "./components/BlogPreview";
+// import BlogPreview from "./components/BlogPreview";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/LoadingScreen";
@@ -67,7 +67,7 @@ export default function App() {
           <About />
           <Skills />
           <Experience />
-          <BlogPreview />
+          {/* <BlogPreview /> */}
           <Projects />
           <Contact />
         </main>
