@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --scrollbar-thumb: #34d399;
+    --scrollbar-track: #18181b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+    border: 2px solid var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--scrollbar-thumb) 85%, white);
+  }
+
+  body {
+    @apply bg-bg text-text font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-text;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .section-title {
+    @apply font-heading text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-muted mt-2 max-w-xl;
+  }
+
+  .card {
+    @apply rounded-xl border border-border bg-surface/50 backdrop-blur-sm;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent/80 transition-colors;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

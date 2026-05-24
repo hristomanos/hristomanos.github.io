@@ -1,9 +1,54 @@
-# Hi there!
-<p align="Justify">
-My name is Christos, and I am a games programmer based in London 🇬🇧. I have two years of professional experience as a software developer at Miniclip, where I collaborated on the development and release of a mobile game titled "The Bowling Fury." As part of a talented cross-functional team, I gained hands-on experience working on various features of the game, including both front-end and back-end development.
+# Portfolio
 
-During my undergraduate studies, I worked as a junior Unity developer during my placement year. I enjoyed discussing game mechanics with game designers and then finding solutions by designing and implementing systems for player character controls and artificial intelligence. These aspects of game development significantly influence the overall gameplay experience.
+A dark, animated developer portfolio built with Vite, React, and Tailwind CSS. Inspired by modern single-page portfolios; all content is driven from `src/data/`.
 
-Additionally, I experimented with low-level graphics APIs such as DirectX and OpenGL, gaining insight into how technological advancements in computer graphics can dramatically enhance the visual fidelity of interactive software. However, I found low-level graphics programming less rewarding than developing game mechanics that could be quickly demonstrated during playtesting. As a result, my current aspirations are to pursue roles that focus on gameplay and AI programming.
- </p>
- 
+## Quick start
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173).
+
+## Customize content
+
+See [CONTENT.md](./CONTENT.md) for which files to edit. Start with `src/data/site.js` and replace placeholder images in `public/images/`.
+
+## Contact form
+
+1. Copy `.env.example` to `.env`
+2. Add [EmailJS](https://www.emailjs.com/) service, template, and public key
+3. Restart the dev server
+
+Without EmailJS, the form falls back to `mailto:`.
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deploy
+
+### Vercel
+
+Push to GitHub and import the repo. `vercel.json` handles SPA routing.
+
+### Netlify
+
+Build command: `npm run build`  
+Publish directory: `dist`  
+`public/_redirects` handles SPA routing.
+
+After deploy, update `site.url` in `src/data/site.js` and meta tags in `index.html`.
+
+## Stack
+
+- Vite + React
+- Tailwind CSS
+- React Router
+- Framer Motion + Lenis
+- react-markdown (blog)
+- EmailJS (optional contact)
