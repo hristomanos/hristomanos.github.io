@@ -35,7 +35,7 @@ export default function CursorGlow() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[15] hidden md:block mix-blend-soft-light"
+      className="cursor-glow pointer-events-none fixed inset-0 z-[15] hidden md:block mix-blend-soft-light"
       aria-hidden
     >
       <div

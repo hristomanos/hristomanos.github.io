@@ -2,17 +2,23 @@ export const projects = [
   {
     id: "project-one",
     title: "Bowling Fury",
+    year: "2023 – 2024 · Released",
     description:
       "Bowling Fury is a competitive and fast paced mobile bowling game with over 500K installs and 4.6 average rating on app stores.",
     longDescription:
       "Expand on the problem you solved, your technical decisions, and the outcome. Recruiters skim for impact and stack.",
-    tech: ["Multi-layered C# application", "Unity","GCP", "Redis"],
+    tech: ["C#", "Unity","GCP", "Redis"],
     image: "/images/BowlingFuryLogo.webp",
+    images: [
+      // "/images/BowlingFuryLogo.webp",
+      // "/images/Achievements.webp",
+      // "/images/Components.webp",
+    ],
     links: {
       live: "https://play.google.com/store/apps/details?id=uk.co.yakuto.Bowling&pcampaignid=web_share",
     },
     featured: true,
-    category: "fullstack",
+    category: "shippedTitles",
   },
   // {
   //   id: "project-two",
@@ -66,7 +72,7 @@ export const projects = [
 
 export const projectCategories = [
   { id: "all", label: "All" },
-  { id: "fullstack", label: "Full Stack" },
+  { id: "shippedTitles", label: "Shipped Titles" },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
   { id: "tools", label: "Tools" },

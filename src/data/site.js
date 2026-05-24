@@ -20,7 +20,6 @@ export const site = {
   socials: {
     github: "https://https://github.com/hristomanos",
     linkedin: "https://https://www.linkedin.com/in/christomanos/",
-    twitter: "https://x.com/yourusername",
   },
   seo: {
     description:
