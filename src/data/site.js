@@ -6,7 +6,7 @@ export const site = {
   email: "me@christomanos.co.uk",
   url: "https://hristomanos.github.io/",
   avatar: "/images/profile-Square-1058p.webp",
-  resumeUrl: "https://drive.google.com/file/d/1PPlTO-QUaWOcYWO-uXNgNoe3xmonj0uY/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1H6jvHarHRPkvbedS6z35_enTpzbfOcsa/view?usp=sharing",
   available: true,
    bio: [
     "I'm a software developer with a passion for creating clean, efficient code and meaningful user experiences. With a background in computer games programming, I bring a unique blend of technical expertise and creative problem-solving to every project I undertake.",
