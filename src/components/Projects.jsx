@@ -97,6 +97,8 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -163,6 +165,8 @@ export default function Projects() {
                   <img
                     src={selectedImages[selectedImageIndex]}
                     alt={`${selected.title} screenshot ${selectedImageIndex + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                   {hasMultipleImages && (
@@ -204,6 +208,8 @@ export default function Projects() {
                         <img
                           src={image}
                           alt=""
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover"
                         />
                       </button>

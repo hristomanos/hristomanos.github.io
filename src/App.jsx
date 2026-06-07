@@ -29,6 +29,13 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = loading ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [loading]);
+
+  useEffect(() => {
     if (loading || reducedMotion) return;
 
     const instance = new Lenis({
@@ -55,10 +62,10 @@ export default function App() {
   return (
     <LenisContext.Provider value={lenis}>
       <LoadingScreen finished={!loading} />
-      <ScrollProgress />
+      {!reducedMotion && <ScrollProgress />}
       <CursorGlow />
       <FloatingOrbs />
-      <BackToTop />
+      {!reducedMotion && <BackToTop />}
       <EasterEgg />
       <div className="min-h-screen bg-bg relative z-10">
         <Navbar />

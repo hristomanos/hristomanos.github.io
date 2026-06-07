@@ -13,7 +13,23 @@ export default function Hero() {
       className="min-h-screen flex flex-col justify-center pt-24 pb-16 relative"
     >
       <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
-        <div>
+        <motion.div
+          initial={reduced ? {} : { opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className="relative mx-auto md:mx-0 order-first md:order-none"
+        >
+          <div className="absolute inset-0 rounded-2xl bg-accent/20 blur-3xl scale-90" />
+          <img
+            src={site.avatar}
+            alt={site.name}
+            className="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl object-cover border border-border shadow-2xl"
+            width={288}
+            height={288}
+          />
+        </motion.div>
+
+        <div className="order-last md:order-none">
           {site.available && (
             <motion.div
               initial={reduced ? {} : { opacity: 0, y: 10 }}
@@ -82,22 +98,6 @@ export default function Hero() {
             </MagneticButton>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={reduced ? {} : { opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
-          className="relative mx-auto md:mx-0"
-        >
-          <div className="absolute inset-0 rounded-2xl bg-accent/20 blur-3xl scale-90" />
-          <img
-            src={site.avatar}
-            alt={site.name}
-            className="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl object-cover border border-border shadow-2xl"
-            width={288}
-            height={288}
-          />
-        </motion.div>
       </div>
 
       <motion.a

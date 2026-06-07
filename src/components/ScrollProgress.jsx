@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLenis } from "../context/LenisContext";
+import { useReducedMotion } from "../hooks/useReducedMotion";
 
 function getNativeProgress() {
   const docHeight =
@@ -9,9 +10,12 @@ function getNativeProgress() {
 
 export default function ScrollProgress() {
   const lenis = useLenis();
+  const reduced = useReducedMotion();
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (reduced) return undefined;
+
     const update = () => {
       setProgress(lenis ? lenis.progress * 100 : getNativeProgress());
     };
@@ -25,7 +29,9 @@ export default function ScrollProgress() {
     window.addEventListener("scroll", update, { passive: true });
     update();
     return () => window.removeEventListener("scroll", update);
-  }, [lenis]);
+  }, [lenis, reduced]);
+
+  if (reduced) return null;
 
   return (
     <div
