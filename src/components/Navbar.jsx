@@ -91,29 +91,26 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="md:hidden fixed inset-0 top-16 z-40 bg-bg/95 backdrop-blur-lg">
-          <ul className="flex flex-col items-center gap-6 pt-12">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-lg text-muted hover:text-accent transition-colors"
-                  onClick={closeMenu}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            {/* <li>
-              <Link
-                to="/blog"
-                className="text-lg text-muted hover:text-accent transition-colors"
-                onClick={closeMenu}
-              >
-                All posts
-              </Link>
-            </li> */}
-          </ul>
+        <div className="md:hidden fixed inset-0 top-16 z-40">
+          {/* backdrop (semi-transparent) */}
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={closeMenu} />
+
+          {/* dropdown panel (opaque) */}
+          <div className="relative mx-4 mt-4 rounded-lg bg-bg border border-border shadow-xl p-6">
+            <ul className="flex flex-col items-start gap-4">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-lg text-muted hover:text-accent transition-colors"
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </header>
