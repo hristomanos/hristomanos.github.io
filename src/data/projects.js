@@ -1,12 +1,12 @@
 export const projects = [
   {
     id: "project-one",
-    title: "Bowling Fury",
+    title: "Bowling Fury: Ten Pin King",
     year: "2023 – 2024 · Released",
     description:
       "Bowling Fury is a competitive and fast paced mobile bowling game with over 500K installs and 4.6 average rating on app stores.",
     longDescription:
-      "Expand on the problem you solved, your technical decisions, and the outcome. Recruiters skim for impact and stack.",
+      "As a Junior Software Developer, I contributed to the development of Bowling Fury by tackling a variety of tasks across the codebase. I implemented new features, optimized performance, and fixed bugs to enhance the overall gaming experience. I also collaborated closely with the product and art teams to ensure seamless integration of assets and smooth gameplay. With 1M+ installs across multiple platforms, I am proud to have been part of a team that was diligent, passionate and professional, and I gained valuable experience in programming, software architecture and teamwork.",
     tech: ["C#", "Unity","GCP", "Redis"],
     image: "/images/BowlingFuryLogo.webp",
     images: [
@@ -15,7 +15,7 @@ export const projects = [
       // "/images/Components.webp",
     ],
     links: {
-      live: "https://play.google.com/store/apps/details?id=uk.co.yakuto.Bowling&pcampaignid=web_share",
+      live: "https://apps.apple.com/gb/app/bowling-fury-ten-pin-king/id6450177184",
     },
     featured: true,
     category: "shippedTitles",

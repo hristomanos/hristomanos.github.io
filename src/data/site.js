@@ -3,7 +3,7 @@ export const site = {
   title: "Software Developer",
   tagline: "Specialised Unity Developer with a passion for creating immersive experiences",
   location: "London, United Kingdom",
-  email: "hristoma@gmail.com",
+  email: "me@christomanos.co.uk",
   url: "https://hristomanos.github.io/",
   avatar: "/images/profile-Square-1058p.webp",
   resumeUrl: "https://drive.google.com/file/d/1PPlTO-QUaWOcYWO-uXNgNoe3xmonj0uY/view?usp=sharing",
