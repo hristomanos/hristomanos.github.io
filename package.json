@@ -8,6 +8,7 @@
     "build": "vite build",
     "predeploy": "npm run build",
     "deploy": "node ./scripts/write-cname.js && gh-pages -d dist",
+    "deploy:pages": "node ./scripts/deploy-gh-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
