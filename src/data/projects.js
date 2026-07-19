@@ -4,7 +4,7 @@ export const projects = [
     title: "Bowling Fury: Ten Pin King",
     year: "2023 – 2024 · Released",
     description:
-      "Bowling Fury is a competitive and fast paced mobile bowling game with over 500K installs and 4.6 average rating on app stores.",
+      "Competitive and fast paced mobile bowling game with over 500K installs and 4.6 average rating on app stores.",
     longDescription:
       "As a Junior Software Developer, I contributed to the development of Bowling Fury by tackling a variety of tasks across the codebase. I implemented new features, optimized performance, and fixed bugs to enhance the overall gaming experience. I also collaborated closely with the product and art teams to ensure seamless integration of assets and smooth gameplay. With 1M+ installs across multiple platforms, I am proud to have been part of a team that was diligent, passionate and professional, and I gained valuable experience in programming, software architecture and teamwork.",
     tech: ["C#", "Unity","GCP", "Redis"],
@@ -20,38 +20,40 @@ export const projects = [
     featured: true,
     category: "shippedTitles",
   },
-  // {
-  //   id: "project-two",
-  //   title: "Project Beta",
-  //   description:
-  //     "An open-source CLI or library that automates a repetitive workflow for developers.",
-  //   longDescription:
-  //     "Describe adoption, design goals, and any interesting implementation details.",
-  //   tech: ["TypeScript", "Rust", "Docker"],
-  //   image: "/images/project-2.svg",
-  //   links: {
-  //     live: null,
-  //     github: "https://github.com/yourusername/project-beta",
-  //   },
-  //   featured: true,
-  //   category: "tools",
-  // },
-  // {
-  //   id: "project-three",
-  //   title: "Project Gamma",
-  //   description:
-  //     "A mobile-friendly marketing site or landing page with animations and strong performance scores.",
-  //   longDescription:
-  //     "Mention Lighthouse scores, animation approach, or CMS integration if relevant.",
-  //   tech: ["Vite", "React", "Framer Motion"],
-  //   image: "/images/project-3.svg",
-  //   links: {
-  //     live: "https://example.com",
-  //     github: "https://github.com/yourusername/project-gamma",
-  //   },
-  //   featured: false,
-  //   category: "frontend",
-  // },
+  {
+    id: "project-two",
+    title: "Card Sorter",
+    year: "2026 · Completed",
+    description:
+      "A satisfying hyper-casual card-sorting puzzle game where players tap stacks of cards, fill matching containers, and avoid conveyor overflow.",
+    longDescription:
+      "I built the core gameplay loop in Unity, including card stack interaction, spline-based conveyor movement, container matching, deck overflow failure, win/loss state handling, and animated UI feedback using DOTween. A key technical challenge was coordinating asynchronous card animations with gameplay state, especially ensuring cards could safely transition between stacks, conveyor lanes, containers, and the deck without race conditions. On the design side, I focused on making the prototype feel immediately readable and satisfying by using color-coded ScriptableObject configurations, designer-friendly lane/container data, staggered card motion, and responsive feedback for successful sorting, level completion, and failure states.",
+    tech: ["C#", "Unity3D", "DOTween", "Splines"],
+    image: "/images/CardSorter.webp",
+    links: {
+      live: "https://chrima.itch.io/card-sorter",
+      github: "https://github.com/hristomanos/Voodoo_Code_Test_Marketing_Unity_Developer",
+    },
+    featured: false,
+    category: "unity",
+  },
+  {
+    id: "project-three",
+    title: "Mine Jack",
+    year: "2026 · Completed",
+    description:
+      "A casino-style tower streak game where players try to find randomly placed keys and avoid the bombs.",
+    longDescription:
+      "Implemented everything from scratch in Unity, including the core gameplay loop, procedural grid generation, difficulty progression, player input handling, and UI feedback. A key technical challenge was ensuring that the randomly generated tower layouts were always solvable and provided a fair challenge to players. I also focused on creating a visually appealing and responsive user interface that clearly communicated game state and player progress.",
+    tech: ["C#", "Unity3D"],
+    image: "/images/MineJack.webp",
+    links: {
+      live: "https://chrima.itch.io/minejack",
+      github: "https://github.com/hristomanos/MineJack",
+    },
+    featured: false,
+    category: "unity",
+  },
   // {
   //   id: "project-four",
   //   title: "Project Delta",
@@ -73,7 +75,7 @@ export const projects = [
 export const projectCategories = [
   { id: "all", label: "All" },
   { id: "shippedTitles", label: "Shipped Titles" },
-  { id: "frontend", label: "Frontend" },
-  { id: "backend", label: "Backend" },
-  { id: "tools", label: "Tools" },
+  { id: "unity", label: "Unity" },
+  //{ id: "backend", label: "Backend" },
+  //{ id: "tools", label: "Tools" },
 ];

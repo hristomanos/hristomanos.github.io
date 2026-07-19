@@ -1,7 +1,7 @@
 export const site = {
   name: "Christomanos Anastasiou",
   title: "Software Developer",
-  tagline: "Specialised Unity Developer with a passion for creating immersive experiences",
+  tagline: "Experienced C#/.Net developer with a passion in game development and real-time applications.",
   location: "London, United Kingdom",
   email: "me@christomanos.co.uk",
   url: "https://hristomanos.github.io/",
