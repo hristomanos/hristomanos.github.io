@@ -90,12 +90,12 @@ export default function Contact() {
             <p className="text-muted text-sm mt-4">Resume</p>
             <p className="font-mono text-accent mt-2"><a href={site.resumeUrl} download className="hover:underline">Download PDF</a></p>
 
-            {!emailjsConfigured && (
+            {/* {!emailjsConfigured && (
               <p className="mt-4 text-xs text-muted">
                 Add EmailJS keys to <code className="text-accent">.env</code>{" "}
                 for in-page sending, or the form opens your mail client.
               </p>
-            )}
+            )} */}
           </div>
 
           <form onSubmit={handleSubmit} className="card p-6 md:p-8 space-y-4">
