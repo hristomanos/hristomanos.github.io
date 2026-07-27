@@ -33,6 +33,11 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          # EmailJS public client IDs (also embedded in the browser bundle)
+          VITE_EMAILJS_SERVICE_ID: service_bqmfb1j
+          VITE_EMAILJS_TEMPLATE_ID: template_f4eq8iw
+          VITE_EMAILJS_PUBLIC_KEY: hpu2QUsmLTFIZWdw4
 
       - name: Write CNAME file
         run: node ./scripts/write-cname.js
