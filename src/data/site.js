@@ -18,8 +18,8 @@ export const site = {
     { label: "GitHub Repositories", value: "20+" },
   ],
   socials: {
-    github: "https://https://github.com/hristomanos",
-    linkedin: "https://https://www.linkedin.com/in/christomanos/",
+    github: "https://github.com/hristomanos",
+    linkedin: "https://www.linkedin.com/in/christomanos/",
   },
   seo: {
     description:
