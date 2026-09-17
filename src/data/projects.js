@@ -28,7 +28,7 @@ export const projects = [
       "A satisfying hyper-casual card-sorting puzzle game where players tap stacks of cards, fill matching containers, and avoid conveyor overflow.",
     longDescription:
       "I built the core gameplay loop in Unity, including card stack interaction, spline-based conveyor movement, container matching, deck overflow failure, win/loss state handling, and animated UI feedback using DOTween. A key technical challenge was coordinating asynchronous card animations with gameplay state, especially ensuring cards could safely transition between stacks, conveyor lanes, containers, and the deck without race conditions. On the design side, I focused on making the prototype feel immediately readable and satisfying by using color-coded ScriptableObject configurations, designer-friendly lane/container data, staggered card motion, and responsive feedback for successful sorting, level completion, and failure states.",
-    tech: ["C#", "Unity3D", "DOTween", "Splines"],
+    tech: ["C#", "Unity", "DOTween", "Splines"],
     image: "/images/CardSorter.webp",
     links: {
       live: "https://chrima.itch.io/card-sorter",
@@ -45,7 +45,7 @@ export const projects = [
       "A casino-style tower streak game where players try to find randomly placed keys and avoid the bombs.",
     longDescription:
       "Implemented everything from scratch in Unity, including the core gameplay loop, procedural grid generation, difficulty progression, player input handling, and UI feedback. A key technical challenge was ensuring that the randomly generated tower layouts were always solvable and provided a fair challenge to players. I also focused on creating a visually appealing and responsive user interface that clearly communicated game state and player progress.",
-    tech: ["C#", "Unity3D"],
+    tech: ["C#", "Unity"],
     image: "/images/MineJack.webp",
     links: {
       live: "https://chrima.itch.io/minejack",
@@ -64,7 +64,7 @@ export const projects = [
       "Using Unity and C#, I developed a 3D obstacle course that allows players to control units in various formations while navigating complex environments with obstacle avoidance and pathfinding algorithms to ensure coherent movement of units while maintaining their formations." + 
       "Implementing dynamic tactical formations in real-time strategy games presented several challenges. The primary challenge is ensuring that units maintain their formation while navigating complex environments with obstacles and changing terrain. " + 
       "Additionally, the system must be responsive to player commands and adapt to evolving battlefield conditions.",
-    tech: ["Unity3D", "C#", "Unit management", "Pathfinding", "Obstacle avoidance"],
+    tech: ["C#", "Unity", "Unit management", "Pathfinding", "Obstacle avoidance"],
     image: "/images/head_to_head.png",
     links: {
       live: null,
@@ -79,8 +79,8 @@ export const projects = [
     description:
       "A DirectX 11 application demonstrating various advanced graphics techniques.",
     longDescription:
-      "DirectX 11 is a low-level C++ rendering API that enables us to create visually stunning real-time applications. Interacting with DirectX 11 requires a deep understanding of graphics programming concepts. Implementing those concepts as part of my university course was the best way for me learn. This project features normal mapping, parallax mapping, post-processing effects and lighting. Additionally, procedural terrain generation was implemented using a heighmap. However, it resulted to sharp edges and a lack of natural-looking terrain.The solution was to implement the Diamond-Square algorithm for terrain smoothing, which resulted in a more natural-looking landscape with smoother edges and better overall terrain quality." , 
-    tech: ["DirectX 11", "C++", "IMGUI", "Graphics programming", "Shader development", "Lighting", "Post-processing", "Normal mapping", "Parallax mapping", "Procedural terrain generation"],
+      "DirectX 11 is a low-level C++ rendering API that enables us to create visually stunning real-time applications. Interacting with DirectX 11 requires a deep understanding of graphics programming concepts. Implementing those concepts as part of my university course was the best way for me to learn. This project features normal mapping, parallax mapping, post-processing effects and lighting. Additionally, procedural terrain generation was implemented using a heighmap. However, it resulted to sharp edges and a lack of natural-looking terrain.The solution was to implement the Diamond-Square algorithm for terrain smoothing, which resulted in a more natural-looking landscape with smoother edges and better overall terrain quality." , 
+    tech: ["C++", "DirectX 11", "HLSL","IMGUI", "Graphics programming", "Shader development", "Lighting", "Post-processing", "Normal mapping", "Parallax mapping", "Procedural terrain generation"],
     image: "/images/parallax.png",
     links: {
       live: null,
@@ -88,6 +88,22 @@ export const projects = [
     },
     featured: false,
     category: "directX11",
+  },
+  {
+    id: "project-six",
+    title: "Predators and Prey",
+    description:
+      "It models the behavior of animals in a virtual environment, including their movement, feeding, and reproduction patterns.",
+    longDescription:
+      "This project focuses on the implementation of Behavioral Trees and State Machines to create autonomous agents that simulate predator-prey interactions within a virtual ecosystem. It demonstrates an autonomous ecosystem simulation where predators and prey interact based on survival instincts such as hunting, fleeing, and breeding. The prey is represented by the small blue (male) and pink (female) circles and is an autonomous agent that reacts to its survival instincts including eating, drinking and breeding. Additionally, having a wider field of view, it flees from predators and employs a behavior tree to manage its behavior." ,
+    tech: ["C#", "Unity","Behavioral Trees", "State Machines", "Autonomous Agents", "Ecosystem Simulation"],
+    image: "/images/searching_for_food.png",
+    links: {
+      live: null,
+      github: "https://github.com/hristomanos/PredatorsAndPrey",
+    },
+    featured: false,
+    category: "unity",
   },
 ];
 
