@@ -45,9 +45,14 @@ export default function Projects() {
 
   useEffect(() => {
     document.body.classList.toggle("project-modal-open", Boolean(selected));
+    if (!selected) return;
+
+    const previousOverflow = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
       document.body.classList.remove("project-modal-open");
+      document.documentElement.style.overflow = previousOverflow;
     };
   }, [selected]);
 
@@ -143,7 +148,8 @@ export default function Projects() {
             onClick={closeProject}
           >
             <motion.div
-              className="card max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+              data-lenis-prevent
+              className="card max-w-3xl w-full max-h-[90vh] overflow-y-auto overscroll-contain relative"
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
