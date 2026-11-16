@@ -57,6 +57,7 @@ export const projects = [
   {
     id: "project-four",
     title: "Dynamic Tactical Formations in Video Games",
+    year: "2022 · Completed",
     description:
       "Postgraduate research project exploring dynamic tactical formations for units in real-time strategy games, focusing on obstacle avoidance and pathfinding algorithms.",
     longDescription:
@@ -76,6 +77,7 @@ export const projects = [
   {
     id: "project-five",
     title: "DirectX 11 Graphics Techniques Showcase",
+    year: "2020 · Completed",
     description:
       "A DirectX 11 application demonstrating various advanced graphics techniques.",
     longDescription:
@@ -92,6 +94,7 @@ export const projects = [
   {
     id: "project-six",
     title: "Predators and Prey",
+    year: "2022 · Completed",
     description:
       "It models the behavior of animals in a virtual environment, including their movement, feeding, and reproduction patterns.",
     longDescription:
