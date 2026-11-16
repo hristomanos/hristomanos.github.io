@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
+import { useLocation } from "react-router-dom";
 import { LenisContext } from "./context/LenisContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -21,6 +22,7 @@ import { useReducedMotion } from "./hooks/useReducedMotion";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [lenis, setLenis] = useState(null);
+  const location = useLocation();
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -58,6 +60,22 @@ export default function App() {
       setLenis(null);
     };
   }, [loading, reducedMotion]);
+
+  useEffect(() => {
+    if (loading || location.hash !== "#projects") return;
+
+    const projectsSection = document.getElementById("projects");
+    if (!projectsSection) return;
+
+    if (lenis) {
+      lenis.scrollTo(projectsSection, { immediate: true, offset: -80 });
+    } else {
+      window.scrollTo({
+        top: projectsSection.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: "instant",
+      });
+    }
+  }, [loading, lenis, location.hash]);
 
   return (
     <LenisContext.Provider value={lenis}>

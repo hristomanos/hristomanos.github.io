@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink, GitBranch, X } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, GitBranch, X } from "lucide-react";
 import { projects, projectCategories } from "../data/projects";
+import { getProjectDetails } from "../data/projectDetails";
 import { useLenis } from "../context/LenisContext";
 import { useReducedMotion } from "../hooks/useReducedMotion";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const reduced = useReducedMotion();
@@ -285,6 +287,15 @@ export default function Projects() {
                       <GitBranch size={18} />
                       View Source
                     </a>
+                  )}
+                  {getProjectDetails(selected.id) && (
+                    <Link
+                      to={`/projects/${selected.id}`}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-accent/30 text-accent hover:bg-accent/10 hover:border-accent transition-all"
+                    >
+                      View project details
+                      <ArrowRight size={18} />
+                    </Link>
                   )}
                 </div>
               </div>

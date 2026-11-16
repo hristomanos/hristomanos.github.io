@@ -1,20 +1,10 @@
-import { lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
 import "./index.css";
-
-const BlogList = lazy(() => import("./pages/BlogList"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Suspense fallback={<div className="min-h-screen bg-bg" />}>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/blog" element={<BlogList />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-      </Routes>
-    </Suspense>
+    <AppRoutes />
   </BrowserRouter>
 );
