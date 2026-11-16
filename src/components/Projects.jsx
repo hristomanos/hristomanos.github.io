@@ -163,7 +163,7 @@ export default function Projects() {
               <button
                 type="button"
                 onClick={closeProject}
-                className="absolute top-4 right-4 p-2 text-muted hover:text-text z-10"
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-muted text-muted"
                 aria-label="Close"
               >
                 <X size={24} />
