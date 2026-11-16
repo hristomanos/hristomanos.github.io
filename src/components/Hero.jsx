@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Mail } from "lucide-react";
+import { ArrowDown, Download, Eye, Mail } from "lucide-react";
 import { site } from "../data/site";
 import MagneticButton from "./MagneticButton";
 import { useReducedMotion } from "../hooks/useReducedMotion";
@@ -80,7 +80,7 @@ export default function Hero() {
             <MagneticButton>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg font-medium hover:bg-accent/90 transition-colors"
+                className="inline-flex h-12 w-44 items-center justify-center gap-2 rounded-lg bg-accent text-bg font-medium hover:bg-accent/90 transition-colors"
               >
                 <Mail size={18} />
                 Get in touch
@@ -89,7 +89,18 @@ export default function Hero() {
             <MagneticButton>
               <a
                 href={site.resumeUrl}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-text hover:border-accent/50 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-44 items-center justify-center gap-2 rounded-lg border border-border text-text hover:border-accent/50 transition-colors"
+              >
+                <Eye size={18} />
+                View CV
+              </a>
+            </MagneticButton>
+            <MagneticButton>
+              <a
+                href={site.resumeUrl}
+                className="inline-flex h-12 w-44 items-center justify-center gap-2 rounded-lg border border-border text-text hover:border-accent/50 transition-colors"
                 download
               >
                 <Download size={18} />

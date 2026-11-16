@@ -4,9 +4,9 @@ export const site = {
   tagline: "Experienced C#/.Net developer with a passion in game development and real-time applications.",
   location: "London, United Kingdom",
   email: "me@christomanos.co.uk",
-  url: "https://hristomanos.github.io/",
+  url: "https://christomanos.co.uk/",
   avatar: "/images/profile-Square-1058p.webp",
-  resumeUrl: "https://drive.google.com/file/d/1o5C0s8XdP270XhinNI5741DjFxP9Ehxd/view?usp=sharing",
+  resumeUrl: "/Christos Anastasiou - Games Programmer.pdf",
   available: true,
    bio: [
     "I'm a software developer with a passion for creating clean, efficient code and meaningful user experiences. With a background in computer games programming, I bring a unique blend of technical expertise and creative problem-solving to every project I undertake.",

@@ -88,7 +88,16 @@ export default function Contact() {
             <p className="text-muted text-sm mt-4">Response time</p>
             <p className="font-mono text-accent mt-2">24 hours </p>
             <p className="text-muted text-sm mt-4">Resume</p>
-            <p className="font-mono text-accent mt-2"><a href={site.resumeUrl} download className="hover:underline">View CV</a></p>
+            <p className="font-mono text-accent mt-2">
+              <a
+                href={site.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                View CV (PDF)
+              </a>
+            </p>
 
             {!emailjsConfigured && (
               <p className="mt-4 text-xs text-muted">
