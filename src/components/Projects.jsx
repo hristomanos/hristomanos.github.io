@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, GitBranch, X } from "lucide-react";
 import { projects, projectCategories } from "../data/projects";
+import { useLenis } from "../context/LenisContext";
 import { useReducedMotion } from "../hooks/useReducedMotion";
 
 export default function Projects() {
   const reduced = useReducedMotion();
+  const lenis = useLenis();
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -49,12 +51,14 @@ export default function Projects() {
 
     const previousOverflow = document.documentElement.style.overflow;
     document.documentElement.style.overflow = "hidden";
+    lenis?.stop();
 
     return () => {
       document.body.classList.remove("project-modal-open");
       document.documentElement.style.overflow = previousOverflow;
+      lenis?.start();
     };
-  }, [selected]);
+  }, [selected, lenis]);
 
   return (
     <section id="projects" className="section-padding">
