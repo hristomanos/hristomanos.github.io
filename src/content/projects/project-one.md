@@ -22,6 +22,12 @@ Working in a small team gave me the opportunity to contribute across a wide rang
 
 My largest contributions included the Components monetisation feature, the Achievements system, the Obstacles game mode, progression and campaign features, and inventory and equipment systems. Throughout development I worked closely with designers, artists, QA engineers, product stakeholders, and fellow programmers to deliver and maintain features used by players worldwide.
 
+-  100+ merged pull requests.
+-  Delivered multiple player-facing features from concept to release.
+-  Contributed across gameplay, UI/UX, backend integrations, and monetisation.
+-  Worked on a live-service mobile game supporting ongoing content releases.
+-  Collaborated in an Agile production environment.
+
 
 ## Contributions
 ---
@@ -92,27 +98,27 @@ I contributed to both the gameplay and user experience aspects of the feature. M
 
 ---
 
-## Additional Contributions
+## Live Service Engineering
 
-Alongside ownership of larger gameplay features, I contributed to a wide range of live game systems, player progression mechanics, monetisation features, analytics integrations, and quality-of-life improvements.
-
-### Economy & Analytics
-- Resolved analytics and telemetry issues relating to currency and item flows.
-- Fixed reward tracking for store purchases, match rewards, league progression, and advertisements.
-- Corrected product family and reference identifier issues affecting analytics reporting.
-
-### Progression Systems
-- Configured XP thresholds for player levels and leagues.
-- Supported league promotion flows and progression rewards.
-- Updated reward presentation and progression-related UI flows.
+Alongside ownership of larger gameplay features, I contributed to a wide range of live game systems, player progression mechanics, monetisation features, analytics, and quality-of-life improvements.
 
 ### UI & Player Experience
 - Implemented reward dialogs, match end scenarios, and store presentation improvements.
 - Improved ball selection, inventory management, and gameplay feedback systems.
 - Added haptic feedback and gameplay quality-of-life improvements.
 
+### Progression Systems
+- Configured XP thresholds for player levels and leagues.
+- Supported league promotion flows and progression rewards.
+- Updated reward presentation and progression-related UI flows.
+
 ### Settings & Platform Features
 - Added support for language switching and localisation.
 - Implemented account deletion and privacy-related features.
 - Added graphics and performance profile settings.
 - Implemented settings functionality including volume controls and user ID utilities.
+
+### Economy & Analytics
+- Resolved analytics and telemetry issues relating to currency and item flows.
+- Fixed reward tracking for store purchases, match rewards, league progression, and advertisements.
+- Corrected product family and reference identifier issues affecting analytics reporting.
