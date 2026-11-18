@@ -20,6 +20,7 @@ export default function MagneticButton({ children, className = "", ...props }) {
 
   return (
     <motion.div
+      {...props}
       ref={ref}
       className={`inline-block transition-transform duration-200 ${className}`}
       onMouseMove={handleMouseMove}

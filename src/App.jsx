@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { useLocation } from "react-router-dom";
 import { LenisContext } from "./context/LenisContext";
@@ -22,6 +22,7 @@ import { useReducedMotion } from "./hooks/useReducedMotion";
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [lenis, setLenis] = useState(null);
+  const lenisRef = useRef(null);
   const location = useLocation();
   const reducedMotion = useReducedMotion();
 
@@ -45,7 +46,10 @@ export default function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
-    setLenis(instance);
+    lenisRef.current = instance;
+    const publishId = requestAnimationFrame(() => {
+      setLenis(instance);
+    });
 
     let rafId;
     function raf(time) {
@@ -55,9 +59,13 @@ export default function App() {
     rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(publishId);
       cancelAnimationFrame(rafId);
       instance.destroy();
-      setLenis(null);
+      if (lenisRef.current === instance) lenisRef.current = null;
+      requestAnimationFrame(() => {
+        setLenis((current) => (current === instance ? null : current));
+      });
     };
   }, [loading, reducedMotion]);
 
@@ -78,7 +86,7 @@ export default function App() {
   }, [loading, lenis, location.hash]);
 
   return (
-    <LenisContext.Provider value={lenis}>
+    <LenisContext.Provider value={{ ref: lenisRef, instance: lenis }}>
       <LoadingScreen finished={!loading} />
       {!reducedMotion && <ScrollProgress />}
       <CursorGlow />

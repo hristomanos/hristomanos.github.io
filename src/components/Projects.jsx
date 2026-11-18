@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, ExternalLink, GitBranch, X } from "lucide-react";
 import { projects, projectCategories } from "../data/projects";
@@ -9,10 +9,14 @@ import { Link } from "react-router-dom";
 
 export default function Projects() {
   const reduced = useReducedMotion();
-  const lenis = useLenis();
+  const lenisContext = useLenis();
+  const lenis = lenisContext?.instance;
   const [filter, setFilter] = useState("all");
   const [selected, setSelected] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const triggerRef = useRef(null);
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
 
   const filtered =
     filter === "all"
@@ -25,7 +29,8 @@ export default function Projects() {
       : [];
   const hasMultipleImages = selectedImages.length > 1;
 
-  const openProject = (project) => {
+  const openProject = (project, trigger) => {
+    triggerRef.current = trigger;
     setSelected(project);
     setSelectedImageIndex(0);
   };
@@ -61,6 +66,49 @@ export default function Projects() {
       lenis?.start();
     };
   }, [selected, lenis]);
+
+  useEffect(() => {
+    if (!selected) return undefined;
+
+    const focusFrame = requestAnimationFrame(() => {
+      closeButtonRef.current?.focus();
+    });
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setSelected(null);
+        setSelectedImageIndex(0);
+        return;
+      }
+
+      if (event.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleKeyDown);
+      triggerRef.current?.focus();
+    };
+  }, [selected]);
 
   return (
     <section id="projects" className="section-padding">
@@ -101,8 +149,17 @@ export default function Projects() {
                 initial={reduced ? {} : { opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={reduced ? {} : { opacity: 0, scale: 0.98 }}
-                className="card overflow-hidden cursor-pointer group"
-                onClick={() => openProject(project)}
+                className="card overflow-hidden cursor-pointer group text-left"
+                role="button"
+                tabIndex={0}
+                onClick={(event) => openProject(project, event.currentTarget)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openProject(project, event.currentTarget);
+                  }
+                }}
+                aria-label={`Open details for ${project.title}`}
               >
                 <div className="aspect-video bg-bg overflow-hidden">
                   <img
@@ -154,6 +211,10 @@ export default function Projects() {
             onClick={closeProject}
           >
             <motion.div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-dialog-title"
               data-lenis-prevent
               className="card max-w-3xl w-full max-h-[90vh] overflow-y-auto overscroll-contain relative"
               initial={{ scale: 0.95, y: 20 }}
@@ -163,6 +224,7 @@ export default function Projects() {
             >
               {/* Close button - positioned absolutely */}
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={closeProject}
                 className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-muted text-muted"
@@ -234,7 +296,10 @@ export default function Projects() {
               <div className="p-6 md:p-8">
                 {/* Title and meta */}
                 <div className="mb-6">
-                  <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-2">
+                  <h2
+                    id="project-dialog-title"
+                    className="text-3xl md:text-4xl font-heading font-semibold mb-2"
+                  >
                     {selected.title}
                   </h2>
                   {selected.year && (

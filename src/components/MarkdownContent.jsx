@@ -1,7 +1,8 @@
+import { lazy, Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+const MarkdownCodeBlock = lazy(() => import("./MarkdownCodeBlock"));
 
 function getYouTubeVideoId(href) {
   const match = href?.match(
@@ -88,19 +89,20 @@ export default function MarkdownContent({ content }) {
             const isBlock = Boolean(match);
             if (isBlock) {
               return (
-                <SyntaxHighlighter
-                  style={oneDark}
-                  language={match[1]}
-                  PreTag="div"
-                  customStyle={{
-                    margin: 0,
-                    borderRadius: "0.5rem",
-                    fontSize: "0.875rem",
-                  }}
-                  {...props}
+                <Suspense
+                  fallback={
+                    <pre className="overflow-x-auto rounded-lg border border-border bg-surface p-4">
+                      <code>{String(children).replace(/\n$/, "")}</code>
+                    </pre>
+                  }
                 >
-                  {String(children).replace(/\n$/, "")}
-                </SyntaxHighlighter>
+                  <MarkdownCodeBlock
+                  language={match[1]}
+                  {...props}
+                  >
+                    {children}
+                  </MarkdownCodeBlock>
+                </Suspense>
               );
             }
             return (

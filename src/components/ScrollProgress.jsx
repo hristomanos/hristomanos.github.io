@@ -9,7 +9,8 @@ function getNativeProgress() {
 }
 
 export default function ScrollProgress() {
-  const lenis = useLenis();
+  const lenisContext = useLenis();
+  const lenis = lenisContext?.instance;
   const reduced = useReducedMotion();
   const [progress, setProgress] = useState(0);
 

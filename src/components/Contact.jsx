@@ -14,16 +14,33 @@ export default function Contact() {
   const reduced = useReducedMotion();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("idle");
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText(site.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(site.email);
+      } else {
+        const input = document.createElement("textarea");
+        input.value = site.email;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+        const copied = document.execCommand("copy");
+        document.body.removeChild(input);
+        if (!copied) throw new Error("Copy command failed");
+      }
+      setCopyStatus("success");
+    } catch {
+      setCopyStatus("error");
+    }
+    setTimeout(() => setCopyStatus("idle"), 2000);
   };
 
   const handleSubmit = async (e) => {
@@ -82,9 +99,13 @@ export default function Contact() {
                 className="p-2 text-muted hover:text-accent transition-colors"
                 aria-label="Copy email"
               >
-                {copied ? <Check size={16} /> : <Copy size={16} />}
+                {copyStatus === "success" ? <Check size={16} /> : <Copy size={16} />}
               </button>
             </div>
+            <p className="mt-2 text-xs text-muted" aria-live="polite">
+              {copyStatus === "success" && "Email address copied."}
+              {copyStatus === "error" && "Could not copy. Select the email address instead."}
+            </p>
             <p className="text-muted text-sm mt-4">Response time</p>
             <p className="font-mono text-accent mt-2">24 hours </p>
             <p className="text-muted text-sm mt-4">Resume</p>
