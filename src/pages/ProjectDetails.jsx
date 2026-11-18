@@ -28,9 +28,23 @@ export default function ProjectDetails() {
     <BlogLayout backTo="/#projects" backLabel="Back to projects">
       <article>
         <p className="text-sm font-mono text-muted">{project.year}</p>
-        <h1 className="mt-3 font-heading text-3xl md:text-4xl font-semibold leading-tight">
-          {project.title}
-        </h1>
+        <div className="mt-3 flex items-center gap-4">
+          {project.titleIcon && (
+            <img
+              src={project.titleIcon}
+              alt=""
+              aria-hidden="true"
+              className="shrink-0 object-contain"
+              style={{
+                width: project.titleIconSize ?? 48,
+                height: project.titleIconSize ?? 48,
+              }}
+            />
+          )}
+          <h1 className="font-heading text-3xl md:text-4xl font-semibold leading-tight">
+            {project.title}
+          </h1>
+        </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tech.map((technology) => (
             <span

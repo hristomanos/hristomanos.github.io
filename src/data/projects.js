@@ -9,6 +9,8 @@ export const projects = [
       "As a Junior Software Developer, I contributed to the development of Bowling Fury by tackling a variety of tasks across the codebase. I implemented new features, optimized performance, and fixed bugs to enhance the overall gaming experience. I also collaborated closely with the product and art teams to ensure seamless integration of assets and smooth gameplay. With 1M+ installs across multiple platforms, I am proud to have been part of a team that was diligent, passionate and professional, and I gained valuable experience in programming, software architecture and teamwork.",
     tech: ["C#", "Unity","GCP", "Redis", "Kubernetes", "Firebase", "TeamCity", "DOTween"],
     image: "/images/BowlingFuryLogo.webp",
+    titleIcon: "/images/bowlingFuryIcon.webp",
+    titleIconSize: 56,
     images: [
       // "/images/BowlingFuryLogo.webp",
       // "/images/Achievements.webp",
