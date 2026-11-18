@@ -73,6 +73,25 @@ Building on the core framework, I implemented gameplay-specific achievements rel
 
 ---
 
+![Rookie Level 2](/images/RookieLevel2.jpg "width=30%")
+![Rookie Level 3](/images/RookieLevel3Aerial.jpg "width=30%")
+![Rookie Level 4](/images/RookieLevel4.jpg "width=30%")
+
+### Obstacles Game Mode
+
+The Obstacles arcade mode introduced a new gameplay experience that challenged players to navigate arena hazards and environmental obstacles while progressing through dedicated Rookie and Pro difficulty levels.
+
+I contributed to both the gameplay and user experience aspects of the feature. My work included creating and configuring Obstacles levels by collaborating with the product manager on the level design and extending the existing framework using the builder pattern. I also implemented mode-specific UI and connected progression systems by adding unlock requirements to the league path, ensuring the mode integrated naturally with the existing player progression experience.
+
+#### Key Contributions
+
+- Created and configured Rookie and Pro Obstacles levels.
+- Implemented mode-specific UI and gameplay elements.
+- Integrated Obstacles unlock progression into the league system.
+- Updated localisation support for Obstacles and Achievements content.
+
+---
+
 ## Additional Contributions
 
 Alongside ownership of larger gameplay features, I contributed to a wide range of live game systems, player progression mechanics, monetisation features, analytics integrations, and quality-of-life improvements.
